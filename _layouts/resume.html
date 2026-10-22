@@ -1,0 +1,80 @@
+{% assign lang = page.lang | default: 'zh' %}
+{% assign profile = site.data.profile %}
+{% assign t = profile[lang] %}
+{% assign ids = 'education,research,publication,projects,practice,honors' | split: ',' %}
+{% if page.cv %}{% assign zh_path = '/cv/' %}{% assign en_path = '/en/cv/' %}{% else %}{% assign zh_path = '/' %}{% assign en_path = '/en/' %}{% endif %}
+<!doctype html>
+<html lang="{% if lang == 'zh' %}zh-CN{% else %}en{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ t.name }} · {{ t.homepage }}{% if page.cv %} · {{ t.cv }}{% endif %}</title>
+  <meta name="description" content="{{ t.intro | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="zh-CN" href="{{ zh_path | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ en_path | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/resume.css' | relative_url }}?v=1">
+  <script src="{{ '/assets/resume.js' | relative_url }}?v=1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">{% if lang == 'zh' %}跳至正文{% else %}Skip to content{% endif %}</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="wordmark" href="{% if lang == 'en' %}{{ '/en/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">{{ t.name }}</a>
+      <nav class="tools" aria-label="{% if lang == 'zh' %}页面与语言{% else %}Pages and language{% endif %}">
+        <a href="{{ profile.blog }}" target="_blank" rel="noopener">{{ t.blog_label }} ↗</a>
+        <a class="cv-link" href="{% if lang == 'en' %}{{ '/en/cv/' | relative_url }}{% else %}{{ '/cv/' | relative_url }}{% endif %}">{{ t.cv }}</a>
+        <div class="languages" aria-label="Language">
+          <a data-language="zh" href="{{ zh_path | relative_url }}" lang="zh-CN" {% if lang == 'zh' %}aria-current="page"{% endif %}>中文</a>
+          <a data-language="en" href="{{ en_path | relative_url }}" lang="en" {% if lang == 'en' %}aria-current="page"{% endif %}>English</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="page">
+    <section class="hero" aria-labelledby="name">
+      <div class="eyebrow">{% if lang == 'zh' %}个人主页与简历{% else %}PROFILE & CURRICULUM VITAE{% endif %}</div>
+      <h1 id="name">{{ t.name }} <span>{% if lang == 'zh' %}Jian Hu{% else %}胡健{% endif %}</span></h1>
+      <p class="subtitle">{{ t.subtitle }}</p>
+      <p class="intro">{{ t.intro }}</p>
+      <div class="contact-links">
+        <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+        <a href="{{ profile.github }}" target="_blank" rel="noopener">GitHub ↗</a>
+        <button type="button" id="print-resume">{{ t.print }}</button>
+      </div>
+    </section>
+    <nav class="section-nav" aria-label="{% if lang == 'zh' %}简历栏目{% else %}Resume sections{% endif %}">
+      {% for id in ids %}<a href="#{{ id }}">{{ t.nav[forloop.index0] }}</a>{% endfor %}
+    </nav>
+    {% for id in ids %}
+    <section class="resume-section" id="{{ id }}" aria-labelledby="heading-{{ id }}">
+      <div class="section-heading"><span aria-hidden="true">0{{ forloop.index }}</span><h2 id="heading-{{ id }}">{{ t.nav[forloop.index0] }}</h2></div>
+      {% if id == 'publication' %}
+        <article class="entry publication">
+          <p class="publication-status">{{ t.publication.venue }}</p>
+          <h3>{{ t.publication.title }}</h3>
+          <p class="authors">{{ t.publication.authors | replace: 'Jian Hu', '<strong>Jian Hu</strong>' }}</p>
+          <p class="meta">{{ t.publication.detail }}</p>
+          <ul>{% for bullet in t.publication.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
+        </article>
+      {% elsif id == 'honors' %}
+        <div class="honors-grid">
+          <div><h3>{{ t.awards_title }}</h3><ul>{% for award in t.awards %}<li>{{ award }}</li>{% endfor %}</ul></div>
+          <div><h3>{{ t.skills_title }}</h3><ul>{% for skill in t.skills %}<li>{{ skill }}</li>{% endfor %}</ul></div>
+        </div>
+      {% else %}
+        {% for entry in t[id] %}
+        <article class="entry">
+          <div class="entry-heading"><h3>{{ entry.title }}</h3><p class="date">{{ entry.date }}</p></div>
+          <p class="meta">{{ entry.meta }}</p>
+          {% if entry.tags %}<ul class="tags" aria-label="{% if lang == 'zh' %}技术栈{% else %}Technologies{% endif %}">{% for tag in entry.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+          <ul>{% for bullet in entry.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
+        </article>
+        {% endfor %}
+      {% endif %}
+    </section>
+    {% endfor %}
+    <footer><span>© {{ site.time | date: '%Y' }} {{ t.name }}</span><a href="mailto:{{ profile.email }}">{{ t.contact }}</a><a href="{{ profile.blog }}" target="_blank" rel="noopener">{{ t.blog_label }} ↗</a></footer>
+  </main>
+</body>
+</html>

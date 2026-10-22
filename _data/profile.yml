@@ -1,0 +1,229 @@
+email: huchinajs@163.com
+github: https://github.com/hujian404
+blog: https://hujian404.github.io/
+zh:
+  name: 胡健
+  subtitle: 计算机体系结构 · 片上互连网络 · RISC-V 与 FPGA
+  intro: 中国科学院计算技术研究所计算机技术专业硕士研究生，本科毕业于江南大学微电子科学与工程专业。关注 SIMT / GPU 体系结构、片上互连网络（NoC）及 FPGA 原型验证，也参与 AI 编译与软硬件协同研究。
+  homepage: 个人主页
+  cv: 简历
+  blog_label: 技术博客
+  contact: 联系我
+  print: 打印 / 保存 PDF
+  nav: [教育背景, 科研经历, 学术论文, 项目与竞赛, 实践与服务, 荣誉与技能]
+  education:
+    - title: 中国科学院计算技术研究所
+      meta: 计算机技术 · 专业型硕士 · 推荐免试
+      date: 2026.09 — 2029.06（预计）
+      bullets:
+        - 研究兴趣：SIMT / GPU 体系结构、片上互连网络、FPGA 原型验证。
+    - title: 江南大学
+      meta: 微电子科学与工程 · 工学学士
+      date: 2022.09 — 2026.06
+      bullets:
+        - GPA 3.91 / 4.00，专业排名 1 / 144。
+        - 本科毕业论文《面向开源脑启发处理器的片上互连网络（NoC）设计》，获评优秀毕业论文。
+  research:
+    - title: 面向开源 SIMT 处理器的片上互连网络设计
+      meta: 中国科学院计算技术研究所 · 客座实习与本科毕业设计
+      date: 2025.10 — 2026.06
+      tags: [Chisel, NoC, GPGPU-Sim, ChiselTest, cocotb, FPGA]
+      bullets:
+        - 以 NVIDIA Volta V100 为架构参考，使用 Chisel 开发面向 GPGPU 的两级分层交叉开关 NoC，支持 SM 与 L2 缓存切片互联，适配“多对少对多”的访存流量模式。
+        - 搭建 ChiselTest 与 cocotb 验证框架，将 NoC 集成至 GPGPU-Sim 开展周期级性能仿真，评估访存带宽与端到端延迟；基于 SMIC 28nm 工艺完成 Design Compiler 前端综合。
+        - 基于 4 片 AMD VU19P FPGA 构建验证平台，通过 GTY 高速串行接口实现全交叉片间互联，单链路速率超过 10 Gb/s。
+        - 获先进计算机系统研究中心 2025 年度“优秀客座学生”。
+    - title: 专用高算力 AI 协处理器自动化设计工具
+      meta: 省级大学生创新项目“芯驰智捷” · 结题优秀
+      date: 2023.10 — 2025.05
+      tags: [LLM, Verilog, TensorFlow, Gradio]
+      bullets:
+        - 融合国产开源大语言模型，探索从自然语言到定制 AI 协处理器 Verilog 代码的自动生成流程，参与模型部署与微调。
+        - 基于 TensorFlow 2.0 构建神经网络架构；建立专有 AI 协处理器设计数据库，开发领域知识增强的提示工程框架，参与生成机制与验证引擎建设。
+        - 参与协处理器移植，使用 Gradio 构建可视化交互界面，支持跨平台适配。
+  publication:
+    title: Towards FlagOS Backend and End-to-End Robotic Simulation on Neuromorphic Processor
+    authors: Yili Wang, Juncheng Jin, Jian Hu, Xuemiao Liu, Di Zhao
+    venue: MICRO 2026 OASIS-AI Workshop · 已录用 · 第三作者
+    detail: 与第 59 届 IEEE/ACM International Symposium on Microarchitecture（MICRO 2026）同期举办；2026 年 11 月 1 日，希腊雅典。
+    bullets:
+      - 主要负责 OpenBPU 第三代 RISC-V SIMT 类脑处理器 Wenquxing 26 在 Xilinx Virtex UltraScale+ VU19P FPGA 上的硬件部署与原型验证。
+      - 参与软硬件协同研究。项目面向 FlagOS / FlagTree 构建 Triton 编译后端，将 Triton Kernel 映射为 RV-SIMT 机器码，并通过周期精确仿真完成六自由度机械臂运动控制任务的端到端验证。
+  projects:
+    - title: RISC-V CPU 设计
+      meta: 第九届全国大学生集成电路创新创业大赛“竞业达杯” · 全国总决赛一等奖
+      date: 2025.03 — 2025.08
+      tags: [RV32IMF, L1 Cache, JTAG, RT-Thread]
+      bullets:
+        - 项目实现支持 RV32IMF 的 RISC-V 处理器，包含冒险检测、前递与 L1 Data Cache，使用 riscv-tests 进行指令测试并实现 JTAG 调试。
+        - 优化流水线暂停策略与冒险处理逻辑，设计 Block RAM 与寄存器组合存储架构，优化访存关键路径；部署 RT-Thread 并运行 CoreMark 测评。
+    - title: 智能手语识别低功耗 SoC
+      meta: 嵌入式芯片与系统设计竞赛 · FPGA 创新设计赛道“AMD 杯”全国二等奖
+      date: 2024.09 — 2024.12
+      tags: [Zynq-7020, YOLOv4-tiny, HLS, Vivado]
+      bullets:
+        - 基于 Zynq-7020 部署 YOLOv4-tiny 手语识别系统，数据集采用 VOC2007 格式，含 2.2 万样本，实现卷积、池化等 7 种算子硬件加速。
+        - 负责神经网络算子实现与 FPGA 加速器部署，使用 Python 与 HLS 联合仿真；采用重叠式数据流、乒乓存储与计算流水线、16 位定点量化。
+    - title: 基于脑电的高空作业安全检测
+      meta: 嵌入式芯片与系统设计竞赛 · 芯片应用赛道“沁恒杯”东部赛区二等奖
+      date: 2024.03 — 2024.08
+      tags: [RISC-V, EEG, SVM, DMA, PyQt5]
+      bullets:
+        - 整合 TGAM 脑电模块、QMI8658 惯性传感器与温度传感器，在沁恒 RISC-V 开发板上构建多模态感知系统，连接 PC、手机 APP 与板卡。
+        - 负责 EEG 特征提取与算法部署，通过频域特征量化专注度和疲劳度，使用 SVM 实现跌落检测，并通过串口中断与 DMA 实现数据交互。
+    - title: 单相逆变并网运行系统
+      meta: 全国大学生电子设计竞赛 · 江苏赛区二等奖
+      date: 2023.07 — 2023.08
+      tags: [STM32F103, PID, SPWM]
+      bullets:
+        - 负责 STM32F103 开发、PID 算法设计与并网策略实现，通过相位跟踪、SPWM 与 H 桥控制实现逆变器并联运行。
+    - title: 历史建筑楼梯磨损多维度分析框架
+      meta: 美国大学生数学建模竞赛 · Honorable Mention（H 奖）
+      date: 2025.02 — 2025.05
+      tags: [FEM, Bayesian Inference, Monte Carlo, HMM]
+      bullets:
+        - 论文《Echoes of Footsteps: Guiding Archaeological Analysis Through Stair Wear Modeling》融合磨损理论、有限元、贝叶斯推理、蒙特卡洛模拟、HMM 与计算机视觉。
+        - 负责抽象建立楼梯磨损、行人流动模式及基于磨损的年代估计三个子模型。
+  practice:
+    - title: 第十届全国大学生集成电路创新创业大赛 · 算能企业命题技术助理
+      meta: 面向多元场景与具身智能的 TPU 云边端协同创新系统设计
+      date: 2026.02 — 2026.08
+      tags: [SOPHON BM1684, TPU-MLIR, SAIL SDK, CV1800B / SG200x]
+      bullets:
+        - 为基于 BM1684 TPU、少林派开发板及 Airbox 微服务器的 AI 推理、模型部署与开发环境提供技术答疑。
+        - 协助排查 TPU-MLIR 编译与量化、SAIL SDK 推理、云边端算力调度、硬件环境和多路视频编解码问题，整理赛事 FAQ。
+        - 配合组委会及算能工程师开展技术培训、赛题答疑与沟通协作，获评“优秀赛题技术助理”。
+    - title: 学生工作
+      meta: 江南大学集成电路学院
+      date: 2023 — 2026
+      bullets:
+        - 集成电路设计俱乐部负责人，2024.09 — 2025.06。
+        - 微电子 2201 班学习委员，2023.09 — 2026.06。
+  awards_title: 荣誉奖励
+  awards:
+    - 国家奖学金（连续两年）；国家励志奖学金。
+    - 本科优秀毕业生（全院唯一）；优秀毕业论文。
+    - 江南大学校长特别奖提名奖；至善荣誉生。
+    - 博远海外奖学金、金龙鱼奖学金、江南大学综合奖学金。
+    - 校级三好学生、优秀共青团员。
+    - 中国科学院计算技术研究所先进计算机系统研究中心 2025 年度优秀客座学生。
+    - 第十届全国大学生集成电路创新创业大赛优秀赛题技术助理。
+  skills_title: 技术与语言
+  skills:
+    - 硬件与架构：Chisel、Verilog、RISC-V、SIMT、NoC、FPGA、HLS。
+    - 验证与工具：ChiselTest、cocotb、GPGPU-Sim、Vivado、Design Compiler、Python。
+    - AI 与系统：TensorFlow、模型部署、TPU-MLIR / SAIL SDK 技术支持、RT-Thread。
+    - 英语：CET-4 595 分，CET-6 556 分；全国计算机二级 C 语言（优秀）。
+en:
+  name: Jian Hu
+  subtitle: Computer Architecture · Networks on Chip · RISC-V & FPGA
+  intro: Master's student in Computer Technology at the Institute of Computing Technology, Chinese Academy of Sciences, with a B.Eng. in Microelectronics Science and Engineering from Jiangnan University. My interests include SIMT / GPU architecture, networks on chip, and FPGA prototyping, alongside AI compilation and hardware–software co-design.
+  homepage: Home
+  cv: CV
+  blog_label: Technical blog
+  contact: Contact
+  print: Print / Save PDF
+  nav: [Education, Research, Publication, Projects, Service, Honors & Skills]
+  education:
+    - title: Institute of Computing Technology, Chinese Academy of Sciences
+      meta: Professional Master's in Computer Technology · Recommended admission without entrance examination
+      date: Sep 2026 — Jun 2029 (expected)
+      bullets:
+        - Interests include SIMT / GPU architecture, networks on chip, and FPGA prototyping.
+    - title: Jiangnan University
+      meta: B.Eng. in Microelectronics Science and Engineering
+      date: Sep 2022 — Jun 2026
+      bullets:
+        - GPA 3.91 / 4.00; ranked 1st out of 144 students.
+        - Outstanding undergraduate thesis on NoC design for an open-source brain-inspired processor.
+  research:
+    - title: NoC Design for an Open-Source SIMT Processor
+      meta: Institute of Computing Technology, CAS · Visiting internship and undergraduate thesis
+      date: Oct 2025 — Jun 2026
+      tags: [Chisel, NoC, GPGPU-Sim, ChiselTest, cocotb, FPGA]
+      bullets:
+        - Developed a two-level hierarchical crossbar NoC in Chisel for GPGPU systems, using NVIDIA Volta V100 as an architectural reference. Connected streaming multiprocessors and L2 cache slices for many-to-few-to-many memory traffic.
+        - Built ChiselTest and cocotb verification flows, integrated the NoC into GPGPU-Sim for cycle-level bandwidth and latency evaluation, and completed Design Compiler synthesis with an SMIC 28nm process.
+        - Built a four-device AMD VU19P FPGA validation platform with fully interconnected GTY serial links exceeding 10 Gb/s per link.
+        - Recognized as an Outstanding Visiting Student for 2025 by the Research Center for Advanced Computer Systems.
+    - title: Automated Design Tool for AI Coprocessors
+      meta: Provincial Undergraduate Innovation Project · Completed with an excellent evaluation
+      date: Oct 2023 — May 2025
+      tags: [LLM, Verilog, TensorFlow, Gradio]
+      bullets:
+        - Contributed to deployment and fine-tuning of open-source Chinese LLMs for generating customized AI coprocessor Verilog from natural-language descriptions.
+        - Built neural-network architectures in TensorFlow 2.0, assembled a domain-specific design database, developed knowledge-enhanced prompts, and contributed to generation and verification components.
+        - Contributed to coprocessor porting and built a Gradio interface for interactive use and cross-platform adaptation.
+  publication:
+    title: Towards FlagOS Backend and End-to-End Robotic Simulation on Neuromorphic Processor
+    authors: Yili Wang, Juncheng Jin, Jian Hu, Xuemiao Liu, Di Zhao
+    venue: MICRO 2026 OASIS-AI Workshop · Accepted · Third author
+    detail: Held with the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026), Athens, Greece, November 1, 2026.
+    bullets:
+      - Primarily responsible for hardware deployment and prototype validation of Wenquxing 26, the third-generation OpenBPU RISC-V SIMT brain-inspired processor, on the Xilinx Virtex UltraScale+ VU19P FPGA.
+      - Participated in hardware–software co-design research. The project develops a Triton backend for FlagOS / FlagTree, maps Triton kernels to RV-SIMT machine code, and validates end-to-end six-degree-of-freedom robotic-arm control through cycle-accurate simulation.
+  projects:
+    - title: RISC-V CPU Design
+      meta: 9th National Undergraduate IC Innovation and Entrepreneurship Competition · Jingyeda Cup · First Prize, National Finals
+      date: Mar 2025 — Aug 2025
+      tags: [RV32IMF, L1 Cache, JTAG, RT-Thread]
+      bullets:
+        - The project implemented an RV32IMF processor with hazard detection, forwarding, and an L1 data cache, validated with riscv-tests and JTAG debugging.
+        - Optimized pipeline stalls and hazard handling, combined Block RAM and registers to improve the memory critical path, deployed RT-Thread, and ran CoreMark benchmarks.
+    - title: Low-Power SoC for Sign-Language Recognition
+      meta: Embedded Chip and System Design Competition · AMD Cup FPGA Track · Second Prize, National Finals
+      date: Sep 2024 — Dec 2024
+      tags: [Zynq-7020, YOLOv4-tiny, HLS, Vivado]
+      bullets:
+        - The project deployed YOLOv4-tiny on Zynq-7020 using a VOC2007-format dataset of 22,000 samples, accelerating seven operators including convolution and pooling.
+        - Implemented neural-network operators and deployed the FPGA accelerator with Python / HLS co-simulation, overlapping dataflow, ping-pong buffering, pipelined computation, and 16-bit fixed-point quantization.
+    - title: EEG-Based Safety Monitoring for Work at Height
+      meta: Embedded Chip and System Design Competition · WCH Cup Chip Application Track · Second Prize, Eastern Region
+      date: Mar 2024 — Aug 2024
+      tags: [RISC-V, EEG, SVM, DMA, PyQt5]
+      bullets:
+        - Combined a TGAM EEG module, QMI8658 inertial sensor, and temperature sensor on a WCH RISC-V development board, connecting the board with a PC interface and mobile app.
+        - Extracted EEG frequency-domain features to quantify attention and fatigue, deployed SVM-based fall detection, and implemented serial-interrupt and DMA data transfer.
+    - title: Parallel Single-Phase Inverter System
+      meta: National Undergraduate Electronics Design Contest · Second Prize, Jiangsu Region
+      date: Jul 2023 — Aug 2023
+      tags: [STM32F103, PID, SPWM]
+      bullets:
+        - Developed STM32F103 firmware, PID control, and synchronization strategies, using phase tracking, SPWM, and H-bridge control for parallel inverter operation.
+    - title: Stair-Wear Analysis for Historical Buildings
+      meta: Mathematical Contest in Modeling · Honorable Mention
+      date: Feb 2025 — May 2025
+      tags: [FEM, Bayesian Inference, Monte Carlo, HMM]
+      bullets:
+        - The paper, Echoes of Footsteps Guiding Archaeological Analysis Through Stair Wear Modeling, combined wear theory, finite elements, Bayesian inference, Monte Carlo simulation, hidden Markov models, and computer vision.
+        - Developed three submodels covering stair wear, pedestrian flow patterns, and wear-based age estimation.
+  practice:
+    - title: Technical Assistant for the SOPHON Challenge
+      meta: 10th National Undergraduate IC Innovation and Entrepreneurship Competition · Cloud–Edge–Device TPU Systems for Embodied AI
+      date: Feb 2026 — Aug 2026
+      tags: [SOPHON BM1684, TPU-MLIR, SAIL SDK, CV1800B / SG200x]
+      bullets:
+        - Supported participating teams with AI inference, model deployment, and development environments on BM1684 TPU platforms, Shaolin development boards, and Airbox microservers.
+        - Helped troubleshoot TPU-MLIR compilation and quantization, SAIL SDK inference, distributed compute scheduling, hardware setup, and multi-stream video processing; compiled a competition FAQ.
+        - Coordinated training and technical support with organizers and SOPHON engineers; received the Outstanding Challenge Technical Assistant award.
+    - title: Student Leadership
+      meta: School of Integrated Circuits, Jiangnan University
+      date: 2023 — 2026
+      bullets:
+        - Head of the Integrated Circuit Design Club, Sep 2024 — Jun 2025.
+        - Academic representative for Microelectronics Class 2201, Sep 2023 — Jun 2026.
+  awards_title: Honors
+  awards:
+    - National Scholarship for two consecutive years; National Endeavor Scholarship.
+    - Outstanding Undergraduate Graduate (the sole recipient in the school); Outstanding Undergraduate Thesis.
+    - Nomination Award for the Jiangnan University President's Special Award; Zhishan Honors Student.
+    - Boyuan Overseas Scholarship, Arawana Scholarship, and Jiangnan University Comprehensive Scholarship.
+    - University-level Merit Student and Outstanding Communist Youth League Member.
+    - Outstanding Visiting Student 2025, Research Center for Advanced Computer Systems, ICT, CAS.
+    - Outstanding Challenge Technical Assistant, 10th National Undergraduate IC Innovation and Entrepreneurship Competition.
+  skills_title: Technical Skills & Languages
+  skills:
+    - "Hardware and architecture: Chisel, Verilog, RISC-V, SIMT, NoC, FPGA, HLS."
+    - "Verification and tools: ChiselTest, cocotb, GPGPU-Sim, Vivado, Design Compiler, Python."
+    - "AI and systems: TensorFlow, model deployment, TPU-MLIR / SAIL SDK technical support, RT-Thread."
+    - "English: CET-4 595, CET-6 556; National Computer Rank Examination Level 2 in C (Excellent)."
