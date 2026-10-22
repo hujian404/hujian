@@ -82,7 +82,7 @@ zh:
       date: 2025.02 — 2025.05
       tags: [FEM, Bayesian Inference, Monte Carlo, HMM]
       bullets:
-        - 论文《Echoes of Footsteps: Guiding Archaeological Analysis Through Stair Wear Modeling》融合磨损理论、有限元、贝叶斯推理、蒙特卡洛模拟、HMM 与计算机视觉。
+        - "论文《Echoes of Footsteps: Guiding Archaeological Analysis Through Stair Wear Modeling》融合磨损理论、有限元、贝叶斯推理、蒙特卡洛模拟、HMM 与计算机视觉。"
         - 负责抽象建立楼梯磨损、行人流动模式及基于磨损的年代估计三个子模型。
   practice:
     - title: 第十届全国大学生集成电路创新创业大赛 · 算能企业命题技术助理
@@ -215,7 +215,7 @@ en:
   awards_title: Honors
   awards:
     - National Scholarship for two consecutive years; National Endeavor Scholarship.
-    - Outstanding Undergraduate Graduate (the sole recipient in the school); Outstanding Undergraduate Thesis.
+    - Outstanding Graduate (the sole recipient in the school); Outstanding Undergraduate Thesis.
     - Nomination Award for the Jiangnan University President's Special Award; Zhishan Honors Student.
     - Boyuan Overseas Scholarship, Arawana Scholarship, and Jiangnan University Comprehensive Scholarship.
     - University-level Merit Student and Outstanding Communist Youth League Member.
