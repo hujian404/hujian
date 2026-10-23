@@ -26,7 +26,7 @@
 {% if lang == 'zh' %}个人邮箱{% else %}Personal email{% endif %}：<a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a><br>
 <a href="{{ site.data.profile.linkedin }}">LinkedIn</a> · <a href="{{ site.data.profile.github }}">GitHub</a></p>
 {% elsif page.profile_section == 'cv' %}
-<p><strong>{{ t.name }}</strong><br>MEng Student in Computer Technology (Electronic Information)<br>
+<p><strong>{{ t.name }}</strong><br>{{ t.degree }}<br>
 <a href="mailto:{{ site.data.profile.academic_email }}">{{ site.data.profile.academic_email }}</a> ·
 <a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a> ·
 <a href="{{ site.data.profile.linkedin }}">LinkedIn</a></p>
