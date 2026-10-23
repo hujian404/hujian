@@ -1,18 +1,22 @@
-# Authors
-
-Name Name:
-  name        : "Name Name"
-  uri         : "https://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
-  avatar      : "bio-photo-2.jpg"
-  twitter     : "name"
-  google_plus : "Name"
-
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+zh:
+  name: 胡健 / Jian Hu
+  avatar: hj.png
+  bio: MEng Student in Computer Technology (Electronic Information)
+  location: 中国
+  employer: 中国科学院计算技术研究所
+  email: hujian26e@ict.ac.cn
+  personal_email: huchinajs@163.com
+  github: hujian404
+  linkedin: hujian2003
+  uri: https://hujian404.github.io/
+en:
+  name: Jian Hu / 胡健
+  avatar: hj.png
+  bio: MEng Student in Computer Technology (Electronic Information)
+  location: China
+  employer: ICT, Chinese Academy of Sciences
+  email: hujian26e@ict.ac.cn
+  personal_email: huchinajs@163.com
+  github: hujian404
+  linkedin: hujian2003
+  uri: https://hujian404.github.io/

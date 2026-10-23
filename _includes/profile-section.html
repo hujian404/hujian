@@ -1,0 +1,19 @@
+{% assign t = site.data.profile[page.lang] %}
+{% assign section = include.section %}
+{% if section == 'publication' %}
+  <h3>{{ t.publication.title }}</h3>
+  <p>{{ t.publication.authors | replace: 'Jian Hu', '<strong>Jian Hu</strong>' }}<br>
+  <em>{{ t.publication.venue }}</em><br>{{ t.publication.detail }}</p>
+  <ul>{% for bullet in t.publication.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
+{% elsif section == 'honors' %}
+  <ul>{% for award in t.awards %}<li>{{ award }}</li>{% endfor %}</ul>
+  <h2>{{ t.skills_title }}</h2>
+  <ul>{% for skill in t.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+{% else %}
+  {% for entry in t[section] %}
+  <h3>{{ entry.title }}</h3>
+  <p><em>{{ entry.date }}</em><br>{{ entry.meta }}</p>
+  {% if entry.tags %}<p>{{ entry.tags | join: ' · ' }}</p>{% endif %}
+  <ul>{% for bullet in entry.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
+  {% endfor %}
+{% endif %}

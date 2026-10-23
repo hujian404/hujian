@@ -1,38 +1,27 @@
 # 胡健 Jian Hu
 
-中英文个人主页与简历，内容依据个人简历与补充资料整理。网站使用 Jekyll，中文为默认语言。
+个人学术主页，沿用 [Academic Pages](https://github.com/academicpages/academicpages.github.io) 原生布局、侧栏、导航、响应式样式和主题切换。
 
-## 页面
+## 内容与语言
 
-- `/` 中文主页，`/en/` English homepage
-- `/cv/` 中文简历，`/en/cv/` English CV
-- 顶部的 **中文 / English** 按钮切换对应语言，并保留当前栏目锚点。
-- **打印 / 保存 PDF** 使用浏览器打印，自动隐藏导航并使用打印排版。
+- 中文主页 `/`，英文主页 `/en/`，简历 `/cv/` 与 `/en/cv/`。
+- 导航包含教育经历、研究方向与经历、论文、项目、荣誉和简历；实践与服务在主页与简历中提供入口。
+- 顶部的 English / 中文 链接切换到对应栏目，保留当前锚点；无 JavaScript 时仍可切换语言。
+- `_data/profile.yml` 维护双语资料，`_data/authors.yml` 维护双语侧栏，`_data/navigation.yml` 维护分类。
+- 头像为 `images/hj.png`，源自用户提供的 `hujian/hj.png`。
+- 硕士专业名称统一为 MEng Student in Computer Technology (Electronic Information)。项目内容不展示量化指标。
+- 旧模板示例页不参与发布。原始 Word 简历不上传。
 
-栏目包括教育、研究、论文、项目与竞赛、实践与服务、荣誉与技能。论文状态为已录用，硕士毕业时间标注为预计。
+## 博客同步
 
-## 更新内容
+此仓库由 `hujian404/hujian404.github.io` 以 `resume/` 子模块引用，跟踪 `master`；每小时自动同步，也可手动运行博客的 Sync resume and deploy blog 工作流。
+线上地址：[中文](https://hujian404.github.io/resume/) · [English](https://hujian404.github.io/resume/en/)。
 
-`_data/profile.yml` 是中英文内容的唯一来源。保持 `zh` 和 `en` 中相同的栏目、条目和事实同步；不要把原始个人资料或证书编号上传到公开仓库。
+## 本地预览
 
-`_layouts/resume.html` 共用一套页面布局；`assets/resume.css` 包含响应式和打印样式；`assets/resume.js` 保留语言切换时的栏目位置。语言按钮是普通链接，不依赖 JavaScript 也能工作。
-
-旧 Academic Pages 模板内容保留在源码中供参考，但通过 `_config.yml` 排除，不会作为个人成果发布。
-
-## 本地运行
-
-```bash
+```sh
 bundle install
 bundle exec jekyll serve --baseurl ""
 ```
 
-## 博客同步
-
-此仓库由 `hujian404/hujian404.github.io` 以 `resume/` 子模块引用，跟踪 `master`。提交到此仓库后，博客的 GitHub Actions 每小时同步并构建到：
-
-- 中文：<https://hujian404.github.io/resume/>
-- English：<https://hujian404.github.io/resume/en/>
-
-在博客 Actions 中手动运行 **Sync resume and deploy blog** 可立即触发同步。博客构建时覆盖 `url` / `baseurl`，双语链接、资源、canonical 和 hreflang 随部署子路径生成。无需在两个仓库重复维护简历。
-
-模板许可见 [LICENSE](LICENSE)。
+上游更新已合并至 `7b95833`。保留原始许可证与模板署名。
