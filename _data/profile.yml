@@ -16,7 +16,7 @@ zh:
   - 科研经历
   - 学术论文
   - 项目与竞赛
-  - 实践与服务
+  - 实习实践
   - 荣誉与技能
   education:
   - title: 中国科学院计算技术研究所
@@ -123,7 +123,7 @@ zh:
       与计算机视觉。'
     - 负责抽象建立楼梯磨损、行人流动模式及基于磨损的年代估计相关子模型。
   practice:
-  - title: 第十届全国大学生集成电路创新创业大赛 · 算能企业命题技术助理
+  - title: 第十届全国大学生集成电路创新创业大赛｜算能企业命题赛题技术助理
     meta: 面向多元场景与具身智能的 TPU 云边端协同创新系统设计
     date: 2026.02 — 2026.08
     tags:
@@ -173,7 +173,7 @@ en:
   - Research
   - Publication
   - Projects
-  - Service
+  - Internships & Practice
   - Honors & Skills
   education:
   - title: Institute of Computing Technology, Chinese Academy of Sciences
@@ -236,7 +236,7 @@ en:
       cycle-accurate simulation.
   projects:
   - title: RISC-V CPU Design
-    meta: 9th National Undergraduate IC Innovation and Entrepreneurship Competition · Jingyeda Cup · First Prize,
+    meta: 9th China College IC Competition · Jingyeda Cup · First Prize,
       National Finals
     date: Mar 2025 — Aug 2025
     tags:
@@ -300,7 +300,7 @@ en:
     - Developed submodels covering stair wear, pedestrian flow patterns, and wear-based age estimation.
   practice:
   - title: Technical Assistant for the SOPHON Challenge
-    meta: 10th National Undergraduate IC Innovation and Entrepreneurship Competition · Cloud–Edge–Device TPU Systems
+    meta: 10th China College IC Competition · Cloud–Edge–Device TPU Systems
       for Embodied AI
     date: Feb 2026 — Aug 2026
     tags:
@@ -329,7 +329,7 @@ en:
   - Boyuan Overseas Scholarship, Arawana Scholarship, and Jiangnan University Comprehensive Scholarship.
   - University-level Merit Student and Outstanding Communist Youth League Member.
   - Outstanding Visiting Student 2025, Research Center for Advanced Computer Systems, ICT, CAS.
-  - Outstanding Challenge Technical Assistant, 10th National Undergraduate IC Innovation and Entrepreneurship Competition.
+  - Outstanding Challenge Technical Assistant, 10th China College IC Competition.
   skills_title: Technical Skills & Languages
   skills:
   - 'Hardware and architecture: Chisel, Verilog, RISC-V, NoC, FPGA, HLS.'
