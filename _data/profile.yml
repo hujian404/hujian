@@ -4,7 +4,8 @@ blog: https://hujian404.github.io/
 zh:
   name: 胡健
   subtitle: GPU / NPU 体系结构 · 片上互连网络 · FPGA 原型验证
-  intro: 现为中国科学院计算技术研究所计算机技术专业硕士，本科毕业于江南大学微电子科学与工程专业。研究兴趣包括 GPU/NPU architecture、片上互连网络（NoC）、FPGA 原型验证与软硬件协同设计。
+  intro: 现为中国科学院计算技术研究所计算机技术专业硕士，本科毕业于江南大学微电子科学与工程专业。研究兴趣包括 GPU/NPU architecture、片上互连网络（NoC）、AI 芯片系统建模（ESL）、FPGA
+    原型验证与软硬件协同设计。
   homepage: 个人主页
   cv: 简历
   blog_label: 技术博客
@@ -12,7 +13,6 @@ zh:
   print: 打印 / 保存 PDF
   nav:
   - 教育背景
-  - 科研经历
   - 学术论文
   - 项目与竞赛
   - 实习实践
@@ -21,15 +21,22 @@ zh:
   - title: 中国科学院计算技术研究所
     meta: 计算机技术 · 专业硕士 · 推荐免试
     date: 2026.09 — 2029.06（预计）
-    bullets:
-    - 研究兴趣：GPU/NPU architecture、片上互连网络、FPGA 原型验证与软硬件协同设计。
+    bullets: []
   - title: 江南大学
     meta: 微电子科学与工程 · 工学学士
     date: 2022.09 — 2026.06
     bullets:
     - GPA 3.91 / 4.00，专业排名 1 / 144。
     - 本科毕业论文《面向开源脑启发处理器的片上互连网络（NoC）设计》，获评优秀毕业论文。
-  research:
+  publication:
+    title: Towards FlagOS Backend and End-to-End Robotic Simulation on Neuromorphic Processor
+    authors: Yili Wang, Juncheng Jin, Jian Hu, Xuemiao Liu, Di Zhao
+    venue: MICRO 2026 OASIS-AI Workshop · 已录用 · 第三作者
+    detail: 与第 59 届 IEEE/ACM International Symposium on Microarchitecture（MICRO 2026）同期举办；2026 年 11 月 1 日，希腊雅典。
+    bullets:
+    - 主要负责 OpenBPU 第三代 RISC-V 类脑处理器 Wenquxing 26 在 Xilinx Virtex UltraScale+ VU19P FPGA 上的硬件部署与原型验证。
+    - 参与软硬件协同研究。项目面向 FlagOS / FlagTree 构建 Triton 编译后端，将 Triton Kernel 映射为 目标处理器机器码，并通过周期精确仿真完成机械臂运动控制任务的端到端验证。
+  projects:
   - title: 面向开源处理器的片上互连网络设计
     meta: 中国科学院计算技术研究所 · 客座实习与本科毕业设计
     date: 2025.10 — 2026.06
@@ -53,19 +60,13 @@ zh:
     - Verilog
     - TensorFlow
     - Gradio
+    - RTX 4090
+    - TensorRT-LLM
+    - Baichuan2
     bullets:
-    - 融合国产开源大语言模型，探索从自然语言到定制 AI 协处理器 Verilog 代码的自动生成流程，参与模型部署与微调。
+    - 使用双卡 RTX 4090 在本地部署 Baichuan2 开源大语言模型，采用 TensorRT-LLM 推理框架，支持从自然语言到定制 AI 协处理器 Verilog 代码的生成流程，并参与模型部署与微调。
     - 基于 TensorFlow 构建神经网络架构；建立专有 AI 协处理器设计数据库，开发领域知识增强的提示工程框架，参与生成机制与验证引擎建设。
     - 参与协处理器移植，使用 Gradio 构建可视化交互界面，支持跨平台适配。
-  publication:
-    title: Towards FlagOS Backend and End-to-End Robotic Simulation on Neuromorphic Processor
-    authors: Yili Wang, Juncheng Jin, Jian Hu, Xuemiao Liu, Di Zhao
-    venue: MICRO 2026 OASIS-AI Workshop · 已录用 · 第三作者
-    detail: 与第 59 届 IEEE/ACM International Symposium on Microarchitecture（MICRO 2026）同期举办；2026 年 11 月 1 日，希腊雅典。
-    bullets:
-    - 主要负责 OpenBPU 第三代 RISC-V 类脑处理器 Wenquxing 26 在 Xilinx Virtex UltraScale+ VU19P FPGA 上的硬件部署与原型验证。
-    - 参与软硬件协同研究。项目面向 FlagOS / FlagTree 构建 Triton 编译后端，将 Triton Kernel 映射为 目标处理器机器码，并通过周期精确仿真完成机械臂运动控制任务的端到端验证。
-  projects:
   - title: RISC-V CPU 设计
     meta: 第九届全国大学生集成电路创新创业大赛“竞业达杯” · 全国总决赛一等奖
     date: 2025.03 — 2025.08
@@ -156,13 +157,19 @@ zh:
   - AI 与系统：TensorFlow、模型部署、TPU-MLIR / SAIL SDK 技术支持、RT-Thread。
   - 英语：CET-4 595 分，CET-6 556 分；全国计算机二级 C 语言（优秀）。
   degree: 计算机技术 · 专业硕士
+  interests_title: 研究方向
+  interests:
+  - GPU/NPU architecture
+  - 片上互连网络（NoC）与体系结构建模
+  - AI 芯片系统建模（ESL）
+  - FPGA 原型验证与软硬件协同设计
 en:
   name: Jian Hu
   subtitle: GPU / NPU Architecture · Networks on Chip · FPGA Prototyping
   intro: MEng Student in Computer Technology (Electronic Information) at the Institute of Computing Technology,
     Chinese Academy of Sciences. I received my B.Eng. in Microelectronics Science and Engineering from Jiangnan
-    University. My research interests include GPU/NPU architecture, networks on chip, FPGA prototyping, and hardware–software
-    co-design.
+    University. My research interests include GPU/NPU architecture, networks on chip, electronic system-level (ESL)
+    modeling of AI chips, FPGA prototyping, and hardware–software co-design.
   homepage: Home
   cv: CV
   blog_label: Technical blog
@@ -170,7 +177,6 @@ en:
   print: Print / Save PDF
   nav:
   - Education
-  - Research
   - Publication
   - Projects
   - Internships & Practice
@@ -180,16 +186,26 @@ en:
     meta: MEng Student in Computer Technology (Electronic Information) · Recommended admission without entrance
       examination
     date: Sep 2026 — Jun 2029 (expected)
-    bullets:
-    - Research interests include GPU/NPU architecture, networks on chip, FPGA prototyping, and hardware–software
-      co-design.
+    bullets: []
   - title: Jiangnan University
     meta: B.Eng. in Microelectronics Science and Engineering
     date: Sep 2022 — Jun 2026
     bullets:
     - GPA 3.91 / 4.00; ranked 1st out of 144 students.
     - Outstanding undergraduate thesis on NoC design for an open-source brain-inspired processor.
-  research:
+  publication:
+    title: Towards FlagOS Backend and End-to-End Robotic Simulation on Neuromorphic Processor
+    authors: Yili Wang, Juncheng Jin, Jian Hu, Xuemiao Liu, Di Zhao
+    venue: MICRO 2026 OASIS-AI Workshop · Accepted · Third author
+    detail: Held with the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026), Athens, Greece,
+      November 1, 2026.
+    bullets:
+    - Primarily responsible for hardware deployment and prototype validation of Wenquxing 26, the third-generation
+      OpenBPU RISC-V brain-inspired processor, on the Xilinx Virtex UltraScale+ VU19P FPGA.
+    - Participated in hardware–software co-design research. The project develops a Triton backend for FlagOS / FlagTree,
+      maps Triton kernels to target processor machine code, and validates end-to-end robotic-arm control through
+      cycle-accurate simulation.
+  projects:
   - title: NoC Design for an Open-Source Processor
     meta: Institute of Computing Technology, CAS · Visiting internship and undergraduate thesis
     date: Oct 2025 — Jun 2026
@@ -216,25 +232,16 @@ en:
     - Verilog
     - TensorFlow
     - Gradio
+    - RTX 4090
+    - TensorRT-LLM
+    - Baichuan2
     bullets:
-    - Contributed to deployment and fine-tuning of open-source Chinese LLMs for generating customized AI coprocessor
-      Verilog from natural-language descriptions.
+    - Deployed the open-source Baichuan2 large language model locally on dual RTX 4090 GPUs using the TensorRT-LLM
+      inference framework, supporting natural-language-to-Verilog generation for customized AI coprocessors and
+      contributing to model deployment and fine-tuning.
     - Built neural-network architectures in TensorFlow, assembled a domain-specific design database, developed knowledge-enhanced
       prompts, and contributed to generation and verification components.
     - Contributed to coprocessor porting and built a Gradio interface for interactive use and cross-platform adaptation.
-  publication:
-    title: Towards FlagOS Backend and End-to-End Robotic Simulation on Neuromorphic Processor
-    authors: Yili Wang, Juncheng Jin, Jian Hu, Xuemiao Liu, Di Zhao
-    venue: MICRO 2026 OASIS-AI Workshop · Accepted · Third author
-    detail: Held with the 59th IEEE/ACM International Symposium on Microarchitecture (MICRO 2026), Athens, Greece,
-      November 1, 2026.
-    bullets:
-    - Primarily responsible for hardware deployment and prototype validation of Wenquxing 26, the third-generation
-      OpenBPU RISC-V brain-inspired processor, on the Xilinx Virtex UltraScale+ VU19P FPGA.
-    - Participated in hardware–software co-design research. The project develops a Triton backend for FlagOS / FlagTree,
-      maps Triton kernels to target processor machine code, and validates end-to-end robotic-arm control through
-      cycle-accurate simulation.
-  projects:
   - title: RISC-V CPU Design
     meta: 9th China College IC Competition · Jingyeda Cup · First Prize, National Finals
     date: Mar 2025 — Aug 2025
@@ -335,5 +342,11 @@ en:
   - 'AI and systems: TensorFlow, model deployment, TPU-MLIR / SAIL SDK technical support, RT-Thread.'
   - 'English: CET-4 595, CET-6 556; National Computer Rank Examination Level 2 in C (Excellent).'
   degree: MEng Student in Computer Technology (Electronic Information)
+  interests_title: Research Interests
+  interests:
+  - GPU/NPU architecture
+  - Networks on chip and architectural modeling
+  - Electronic system-level (ESL) modeling of AI chips
+  - FPGA prototyping and hardware–software co-design
 academic_email: hujian26e@ict.ac.cn
 linkedin: https://www.linkedin.com/in/hujian2003

@@ -4,21 +4,14 @@
 
 {% if page.profile_section == 'home' %}
 <p>{{ t.intro }}</p>
-<h2>{% if lang == 'zh' %}研究兴趣{% else %}Research Interests{% endif %}</h2>
-<ul>
-  <li>GPU/NPU architecture</li>
-  <li>{% if lang == 'zh' %}片上互连网络（NoC）与体系结构建模{% else %}Networks on chip and architectural modeling{% endif %}</li>
-  <li>{% if lang == 'zh' %}FPGA 原型验证与软硬件协同设计{% else %}FPGA prototyping and hardware–software co-design{% endif %}</li>
-</ul>
 <h2>{% if lang == 'zh' %}教育经历{% else %}Education{% endif %}</h2>
 {% include profile-section.html section='education' %}
 <h2>{% if lang == 'zh' %}学术论文{% else %}Publications{% endif %}</h2>
 {% include profile-section.html section='publication' %}
 <h2>{% if lang == 'zh' %}更多经历{% else %}More about me{% endif %}</h2>
 <p>
-  <a href="{{ prefix | append: '/research/' | relative_url }}">{{ t.nav[1] }}</a> ·
-  <a href="{{ prefix | append: '/projects/' | relative_url }}">{{ t.nav[3] }}</a> ·
-  <a href="{{ prefix | append: '/service/' | relative_url }}">{{ t.nav[4] }}</a> ·
+  <a href="{{ prefix | append: '/projects/' | relative_url }}">{{ t.nav[2] }}</a> ·
+  <a href="{{ prefix | append: '/service/' | relative_url }}">{{ t.nav[3] }}</a> ·
   <a href="{{ prefix | append: '/honors/' | relative_url }}">{{ t.awards_title }}</a>
 </p>
 <h2>{% if lang == 'zh' %}联系方式{% else %}Contact{% endif %}</h2>
@@ -30,14 +23,11 @@
 <a href="mailto:{{ site.data.profile.academic_email }}">{{ site.data.profile.academic_email }}</a> ·
 <a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a> ·
 <a href="{{ site.data.profile.linkedin }}">LinkedIn</a></p>
-{% assign sections = 'education,research,publication,projects,practice,honors' | split: ',' %}
+{% assign sections = 'education,publication,projects,practice,honors' | split: ',' %}
 {% for section in sections %}
 <h2 id="{{ section }}">{{ t.nav[forloop.index0] }}</h2>
 {% include profile-section.html section=section %}
 {% endfor %}
 {% else %}
-{% if page.profile_section == 'research' %}
-<p>{{ t.subtitle }}</p>
-{% endif %}
 {% include profile-section.html section=page.profile_section %}
 {% endif %}

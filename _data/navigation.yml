@@ -1,8 +1,6 @@
 zh:
 - title: 教育经历
   url: /education/
-- title: 研究方向与经历
-  url: /research/
 - title: 学术论文
   url: /publications/
 - title: 项目经历
@@ -16,8 +14,6 @@ zh:
 en:
 - title: Education
   url: /en/education/
-- title: Research
-  url: /en/research/
 - title: Publications
   url: /en/publications/
 - title: Projects
