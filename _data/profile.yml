@@ -4,7 +4,7 @@ blog: https://hujian404.github.io/
 zh:
   name: 胡健
   subtitle: GPU / NPU 体系结构 · 片上互连网络 · FPGA 原型验证
-  intro: 现为中国科学院计算技术研究所计算机技术·专业硕士，本科毕业于江南大学微电子科学与工程专业。研究兴趣包括 GPU/NPU architecture、片上互连网络（NoC）、FPGA 原型验证与软硬件协同设计。
+  intro: 现为中国科学院计算技术研究所计算机技术专业硕士，本科毕业于江南大学微电子科学与工程专业。研究兴趣包括 GPU/NPU architecture、片上互连网络（NoC）、FPGA 原型验证与软硬件协同设计。
   homepage: 个人主页
   cv: 简历
   blog_label: 技术博客
@@ -19,7 +19,7 @@ zh:
   - 荣誉与技能
   education:
   - title: 中国科学院计算技术研究所
-    meta: 计算机技术·专业硕士 · 推荐免试
+    meta: 计算机技术 · 专业硕士 · 推荐免试
     date: 2026.09 — 2029.06（预计）
     bullets:
     - 研究兴趣：GPU/NPU architecture、片上互连网络、FPGA 原型验证与软硬件协同设计。
@@ -155,7 +155,7 @@ zh:
   - 验证与工具：ChiselTest、cocotb、GPGPU-Sim、Vivado、Design Compiler、Python。
   - AI 与系统：TensorFlow、模型部署、TPU-MLIR / SAIL SDK 技术支持、RT-Thread。
   - 英语：CET-4 595 分，CET-6 556 分；全国计算机二级 C 语言（优秀）。
-  degree: 计算机技术·专业硕士
+  degree: 计算机技术 · 专业硕士
 en:
   name: Jian Hu
   subtitle: GPU / NPU Architecture · Networks on Chip · FPGA Prototyping
