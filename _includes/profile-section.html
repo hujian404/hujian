@@ -1,9 +1,5 @@
 {% assign t = site.data.profile[page.lang] %}
 {% assign section = include.section %}
-{% if section == 'education' %}
-  <h2>{{ t.interests_title }}</h2>
-  <ul>{% for interest in t.interests %}<li>{{ interest }}</li>{% endfor %}</ul>
-{% endif %}
 {% if section == 'publication' %}
   <h3>{{ t.publication.title }}</h3>
   <p>{{ t.publication.authors | replace: 'Jian Hu', '<strong>Jian Hu</strong>' }}<br>
@@ -20,4 +16,8 @@
   {% if entry.tags %}<p>{{ entry.tags | join: ' · ' }}</p>{% endif %}
   {% if entry.bullets.size > 0 %}<ul>{% for bullet in entry.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>{% endif %}
   {% endfor %}
+{% endif %}
+{% if section == 'education' %}
+  <h2>{{ t.interests_title }}</h2>
+  <ul>{% for interest in t.interests %}<li>{{ interest }}</li>{% endfor %}</ul>
 {% endif %}
