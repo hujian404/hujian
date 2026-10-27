@@ -37,21 +37,6 @@ zh:
     - 主要负责 OpenBPU 第三代 RISC-V 类脑处理器 Wenquxing 26 在 Xilinx Virtex UltraScale+ VU19P FPGA 上的硬件部署与原型验证。
     - 参与软硬件协同研究。项目面向 FlagOS / FlagTree 构建 Triton 编译后端，将 Triton Kernel 映射为 目标处理器机器码，并通过周期精确仿真完成机械臂运动控制任务的端到端验证。
   projects:
-  - title: Polaris-ECOS：开源脑启发处理器 RTL 到 GDS 实现与验证
-    meta: '中国科学院大学《集成电路设计与验证》课程设计 · 指导教师：沈海华 · <a href="https://github.com/hujian404/Polaris-ECOS">开源仓库</a>'
-    date: 2026 年秋季
-    tags:
-    - RISC-V
-    - Chisel / Verilog
-    - ECOS / ICS55
-    - CTS / STA
-    - C++
-    bullets:
-    - 基于上游 OpenBPU2 / Polaris，完成无缓存 RV64 配置适配、程序级 RTL/门级对照及开源 ECOS 工具链上的综合、布局布线与 GDS 导出；定位 onehot 优化导致的握手逻辑差异并构造 SAT 最小复现。
-    - 通过拥塞驱动布局、密度调整及两缓冲器 ECO，实现 DRC/LVS 零违例、布线后 LEC 通过；50 MHz 下十三个 RC/PVT 角 setup/hold 均通过，最差裕量分别为 +0.256 ns / +0.005 ns，芯片面积约 5.623 mm²。
-    - 集成九个 ECOS SRAM 硬宏，完成接口与程序验证、布局、完整时钟树构建及合法化；该扩展配置尚未满足时钟偏斜目标，未完成布线与最终 GDS。
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>：修复 CTS 源端主干插入缓冲后根输入引脚残留于原网络的问题，恢复引脚/网络归属一致性；九宏用例 CTS 通过，偏斜 0.057312 ns，满足 0.08 ns 目标。已获维护者批准，待合并。'
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>：将局部负载恢复中的全局引脚电容表复制改为局部子集构建，复制工作量由 O(GN) 降至 O(Σn_g)，保持电气检查语义；新增三项回归用例，23/23 iCTS 原生测试通过。已获维护者批准，待合并。'
   - title: 面向开源处理器的片上互连网络设计
     meta: 中国科学院计算技术研究所 · 客座实习与本科毕业设计
     date: 2025.10 — 2026.06
@@ -67,6 +52,21 @@ zh:
     - 搭建 ChiselTest 与 cocotb 验证框架，将 NoC 集成至 GPGPU-Sim 开展周期级性能仿真，并使用 Design Compiler 完成前端综合。
     - 基于 AMD VU19P FPGA 构建验证平台，通过 GTY 高速串行接口实现片间互联与原型验证。
     - 获先进计算机系统研究中心“优秀客座学生”荣誉。
+  - title: Polaris-ECOS：开源脑启发处理器 RTL 到 GDS 实现与验证
+    meta: '中国科学院大学《集成电路设计与验证》课程设计 · 基于 ECOS 开源 EDA 团队工具链 · <a href="https://github.com/hujian404/Polaris-ECOS">开源仓库</a>'
+    date: 2026 年秋季
+    tags:
+    - RISC-V
+    - Chisel / Verilog
+    - ECOS / ICS55
+    - CTS / STA
+    - C++
+    bullets:
+    - '基于开源脑启发处理器二代 <a href="https://gitee.com/OpenBPU/OpenBPU2">OpenBPU2（Gitee）</a> / <a href="https://github.com/ByeBeihai/Polaris">Polaris（GitHub）</a>，完成无缓存 RV64 配置适配、程序级 RTL/门级对照及开源 ECOS 工具链上的综合、布局布线与 GDS 导出；定位 onehot 优化导致的握手逻辑差异并构造 SAT 最小复现。'
+    - 通过拥塞驱动布局、密度调整及两缓冲器 ECO，实现 DRC/LVS 零违例、布线后 LEC 通过；50 MHz 下十三个 RC/PVT 角 setup/hold 均通过，最差裕量分别为 +0.256 ns / +0.005 ns，芯片面积约 5.623 mm²。
+    - 集成九个 ECOS SRAM 硬宏，完成接口与程序验证、布局、覆盖约 59 万端点的完整时钟树构建及合法化，并推进至布线阶段。受大规模设计下开源工具的拥塞修复效率及六小时运行预算限制，本轮实验未生成该配置的最终 GDS；已保留流程配置与阶段检查点，为后续时钟优化、布线收敛及版图导出提供工程基础。
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>：修复 CTS 源端主干插入缓冲后根输入引脚残留于原网络的问题，恢复引脚/网络归属一致性；九宏用例 CTS 通过，偏斜 0.057312 ns，满足 0.08 ns 目标。已获维护者批准，待合并。'
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>：将局部负载恢复中的全局引脚电容表复制改为局部子集构建，复制工作量由 O(GN) 降至 O(Σn_g)，保持电气检查语义；新增三项回归用例，23/23 iCTS 原生测试通过。已获维护者批准，待合并。'
   - title: 专用高算力 AI 协处理器自动化设计工具
     meta: 省级大学生创新项目“芯驰智捷” · 结题优秀
     date: 2023.10 — 2025.05
@@ -221,21 +221,6 @@ en:
       maps Triton kernels to target processor machine code, and validates end-to-end robotic-arm control through
       cycle-accurate simulation.
   projects:
-  - title: 'Polaris-ECOS: RTL-to-GDS Implementation and Verification of a Neuromorphic Processor'
-    meta: 'UCAS Integrated Circuit Design and Verification course project · Advisor: Haihua Shen · <a href="https://github.com/hujian404/Polaris-ECOS">Open-source repository</a>'
-    date: Fall 2026
-    tags:
-    - RISC-V
-    - Chisel / Verilog
-    - ECOS / ICS55
-    - CTS / STA
-    - C++
-    bullets:
-    - Adapted an upstream OpenBPU2 / Polaris cacheless RV64 configuration for the ECOS flow, from synthesis and place-and-route to GDS export, with RTL/gate-level program comparisons; isolated a onehot-induced handshake mismatch with a minimal SAT reproducer.
-    - Combined congestion-driven placement, density tuning, and a two-buffer ECO to achieve zero DRC/LVS violations and proven post-route LEC. All thirteen RC/PVT corners passed setup/hold at 50 MHz, with worst margins of +0.256 ns / +0.005 ns and a die area of approximately 5.623 mm².
-    - Integrated nine ECOS SRAM macros and completed interface/program checks, placement, full clock-tree construction, and legalization. This extension has not met its clock-skew target or completed routing and final GDS export.
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>: Fixed stale source-net membership of a relocated root input after buffered CTS trunk reconnection. The nine-macro fixture completed CTS with 0.057312 ns skew against a 0.08 ns target. Maintainer-approved; awaiting merge.'
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>: Built local pin-capacitance subsets during load recovery instead of copying global tables, reducing copying work from O(GN) to O(Σn_g) while preserving electrical checks. Added three regression cases; all 23 native iCTS test targets passed. Maintainer-approved; awaiting merge.'
   - title: NoC Design for an Open-Source Processor
     meta: Institute of Computing Technology, CAS · Visiting internship and undergraduate thesis
     date: Oct 2025 — Jun 2026
@@ -254,6 +239,21 @@ en:
     - Built an AMD VU19P FPGA validation platform with GTY serial links for inter-device communication and prototype
       verification.
     - Recognized as an Outstanding Visiting Student by the Research Center for Advanced Computer Systems.
+  - title: 'Polaris-ECOS: RTL-to-GDS Implementation and Verification of a Neuromorphic Processor'
+    meta: 'UCAS Integrated Circuit Design and Verification course project · Built with the ECOS open-source EDA team’s toolchain · <a href="https://github.com/hujian404/Polaris-ECOS">Open-source repository</a>'
+    date: Fall 2026
+    tags:
+    - RISC-V
+    - Chisel / Verilog
+    - ECOS / ICS55
+    - CTS / STA
+    - C++
+    bullets:
+    - 'Adapted the second-generation open-source brain-inspired processor <a href="https://gitee.com/OpenBPU/OpenBPU2">OpenBPU2 (Gitee)</a> / <a href="https://github.com/ByeBeihai/Polaris">Polaris (GitHub)</a> into a cacheless RV64 configuration for the ECOS flow, from synthesis and place-and-route to GDS export, with RTL/gate-level program comparisons; isolated a onehot-induced handshake mismatch with a minimal SAT reproducer.'
+    - Combined congestion-driven placement, density tuning, and a two-buffer ECO to achieve zero DRC/LVS violations and proven post-route LEC. All thirteen RC/PVT corners passed setup/hold at 50 MHz, with worst margins of +0.256 ns / +0.005 ns and a die area of approximately 5.623 mm².
+    - Integrated nine ECOS SRAM macros and completed interface/program verification, placement, full clock-tree construction for approximately 589,000 endpoints, and legalization, progressing into routing. Congestion repair on the large design exceeded the six-hour runtime budget, preventing final GDS generation in this experiment. Preserved flow configurations and stage checkpoints provide a foundation for further clock optimization, routing convergence, and layout export.
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>: Fixed stale source-net membership of a relocated root input after buffered CTS trunk reconnection. The nine-macro fixture completed CTS with 0.057312 ns skew against a 0.08 ns target. Maintainer-approved; awaiting merge.'
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>: Built local pin-capacitance subsets during load recovery instead of copying global tables, reducing copying work from O(GN) to O(Σn_g) while preserving electrical checks. Added three regression cases; all 23 native iCTS test targets passed. Maintainer-approved; awaiting merge.'
   - title: Automated Design Tool for AI Coprocessors
     meta: Provincial Undergraduate Innovation Project · Completed with an excellent evaluation
     date: Oct 2023 — May 2025
