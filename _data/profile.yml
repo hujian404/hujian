@@ -65,8 +65,8 @@ zh:
     - '基于开源脑启发处理器二代 <a href="https://gitee.com/OpenBPU/OpenBPU2">OpenBPU2（Gitee）</a> / <a href="https://github.com/ByeBeihai/Polaris">Polaris（GitHub）</a>，完成无缓存 RV64 配置适配、程序级 RTL/门级对照及开源 ECOS 工具链上的综合、布局布线与 GDS 导出；定位 onehot 优化导致的握手逻辑差异并构造 SAT 最小复现。'
     - 通过拥塞驱动布局、密度调整及两缓冲器 ECO，实现 DRC/LVS 零违例、布线后 LEC 通过；50 MHz 下十三个 RC/PVT 角 setup/hold 均通过，最差裕量分别为 +0.256 ns / +0.005 ns，芯片面积约 5.623 mm²。
     - 集成九个 ECOS SRAM 硬宏，完成接口与程序验证、布局、覆盖约 59 万端点的完整时钟树构建及合法化，并推进至布线阶段。受大规模设计下开源工具的拥塞修复效率及六小时运行预算限制，本轮实验未生成该配置的最终 GDS；已保留流程配置与阶段检查点，为后续时钟优化、布线收敛及版图导出提供工程基础。
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>：修复 CTS 源端主干插入缓冲后根输入引脚残留于原网络的问题，恢复引脚/网络归属一致性；九宏用例 CTS 通过，偏斜 0.057312 ns，满足 0.08 ns 目标。已获维护者批准，待合并。'
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>：将局部负载恢复中的全局引脚电容表复制改为局部子集构建，复制工作量由 O(GN) 降至 O(Σn_g)，保持电气检查语义；新增三项回归用例，23/23 iCTS 原生测试通过。已获维护者批准，待合并。'
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>：修复 CTS 源端主干插入缓冲后根输入引脚残留于原网络的问题，恢复引脚/网络归属一致性；九宏用例 CTS 通过，偏斜 0.057312 ns，满足 0.08 ns 目标。已合并至上游主分支。'
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>：将局部负载恢复中的全局引脚电容表复制改为局部子集构建，复制工作量由 O(GN) 降至 O(Σn_g)，保持电气检查语义；新增三项回归用例，23/23 iCTS 原生测试通过。已合并至上游主分支。'
   - title: 专用高算力 AI 协处理器自动化设计工具
     meta: 省级大学生创新项目“芯驰智捷” · 结题优秀
     date: 2023.10 — 2025.05
@@ -252,8 +252,8 @@ en:
     - 'Adapted the second-generation open-source brain-inspired processor <a href="https://gitee.com/OpenBPU/OpenBPU2">OpenBPU2 (Gitee)</a> / <a href="https://github.com/ByeBeihai/Polaris">Polaris (GitHub)</a> into a cacheless RV64 configuration for the ECOS flow, from synthesis and place-and-route to GDS export, with RTL/gate-level program comparisons; isolated a onehot-induced handshake mismatch with a minimal SAT reproducer.'
     - Combined congestion-driven placement, density tuning, and a two-buffer ECO to achieve zero DRC/LVS violations and proven post-route LEC. All thirteen RC/PVT corners passed setup/hold at 50 MHz, with worst margins of +0.256 ns / +0.005 ns and a die area of approximately 5.623 mm².
     - Integrated nine ECOS SRAM macros and completed interface/program verification, placement, full clock-tree construction for approximately 589,000 endpoints, and legalization, progressing into routing. Congestion repair on the large design exceeded the six-hour runtime budget, preventing final GDS generation in this experiment. Preserved flow configurations and stage checkpoints provide a foundation for further clock optimization, routing convergence, and layout export.
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>: Fixed stale source-net membership of a relocated root input after buffered CTS trunk reconnection. The nine-macro fixture completed CTS with 0.057312 ns skew against a 0.08 ns target. Maintainer-approved; awaiting merge.'
-    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>: Built local pin-capacitance subsets during load recovery instead of copying global tables, reducing copying work from O(GN) to O(Σn_g) while preserving electrical checks. Added three regression cases; all 23 native iCTS test targets passed. Maintainer-approved; awaiting merge.'
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/319">ecc-tools PR #319</a>: Fixed stale source-net membership of a relocated root input after buffered CTS trunk reconnection. The nine-macro fixture completed CTS with 0.057312 ns skew against a 0.08 ns target. Merged into upstream main.'
+    - '<a href="https://github.com/openecos-projects/ecc-tools/pull/320">ecc-tools PR #320</a>: Built local pin-capacitance subsets during load recovery instead of copying global tables, reducing copying work from O(GN) to O(Σn_g) while preserving electrical checks. Added three regression cases; all 23 native iCTS test targets passed. Merged into upstream main.'
   - title: Automated Design Tool for AI Coprocessors
     meta: Provincial Undergraduate Innovation Project · Completed with an excellent evaluation
     date: Oct 2023 — May 2025
